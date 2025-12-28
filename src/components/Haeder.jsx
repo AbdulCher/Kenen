@@ -7,7 +7,7 @@ export default function Header() {
         
         {/* Logo / Nom du site */}
         <Link to="/" className="text-white text-2xl tracking-wide">
-          Kennen
+          Kenen
         </Link>
 
         {/* Navigation */}
