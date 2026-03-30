@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home"
 import About from "./pages/About"
-import Music from "./pages/Music"
+import Music from "./pages/music/Music"
 import News from "./pages/News"
 import Header from "./components/Haeder"
 
