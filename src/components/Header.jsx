@@ -41,10 +41,19 @@ export default function Header() {
 
           <li>
             <Link 
+              to="/photos" 
+              className="hover:text-gray-300 transition duration-200"
+            >
+            PHOTOS
+            </Link>
+          </li>
+
+          <li>
+            <Link 
               to="/news" 
               className="hover:text-gray-300 transition duration-200"
             >
-              NEWS
+              VIDEOS
             </Link>
           </li>
 

@@ -1,4 +1,5 @@
 import DustParticles from "../../animations/DustParticles"
+import Header from "../../components/Header";
 
 import { useState } from "react";
 import { albums } from "./Albums";
@@ -11,7 +12,8 @@ export default function Music() {
     return(
       <>
         <DustParticles />
-        <section className="w-full h-screen bg-[#780000] text-white pt-28 px-5">
+        <Header />
+        <section className="w-full h-screen from-black to-[#c00303] bg-gradient-to-b text-white pt-28 px-5">
           <div className="flex justify-center">
             <h2 className="font-bold text-xl flex justify-center">MUSIC</h2>
           </div>

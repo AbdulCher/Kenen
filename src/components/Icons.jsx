@@ -11,7 +11,7 @@ export default function Icons() {
 
   return (
     <nav 
-      className="absolute top-1/2 right-6 -translate-y-1/2
+      className="fixed top-1/2 right-6 -translate-y-1/2
                  flex flex-col gap-6 z-50"
       aria-label="Réseaux sociaux"
     >

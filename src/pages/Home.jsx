@@ -1,6 +1,6 @@
 import BgHero from "../assets/bgHero.jpg";
 import BgMusic from "../assets/bgMusic.jpg";
-
+import Header from "../components/Header"
 import Icons from "../components/Icons";
 import { useState, useRef } from "react";
 import { albums } from "./music/Albums";
@@ -12,12 +12,14 @@ export default function Home() {
   const scrollRef = useRef();
 
   const scrollLeft = () => {
-  setActiveIndex((prev) => Math.max(prev - 1, 0));
+    setActiveIndex((prev) =>
+      prev === 0 ? albums.length - 1 : prev - 1
+    );
   };
 
   const scrollRight = () => {
-  setActiveIndex((prev) =>
-    Math.min(prev + 1, albums.length - 1)
+    setActiveIndex((prev) =>
+      prev === albums.length - 1 ? 0 : prev + 1
     );
   };
 
@@ -25,8 +27,8 @@ export default function Home() {
 
   return (
     <>
-      {/* HERO */}
-      <section className="relative w-full h-screen flex flex-col justify-center items-center text-white">
+    <Header />
+      <section className="relative w-full h-screen pt-20 text-white">
 
         <img
           src={BgHero}
@@ -34,34 +36,33 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        {/* Dégradé */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black"></div>
+          {/* Dégradé */}
+          {/*<div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black"></div>
+        */}
+          <h1 className="relative z-10 text-5xl font-bold text-center mt-40">
+            BARHAN
+          </h1>
 
-        <h1 className="z-10 text-5xl font-bold">BARHAN</h1>
+          <div className="relative z-10 mt-6 flex justify-center">
+            <Icons />
+          </div>
 
-        <div className="z-10 mt-6">
-          <Icons />
-        </div>
       </section>
 
       {/* MUSIC */}
-      <section className="relative w-full min-h-screen py-20 text-white">
+      <section className="relative w-full min-h-screen text-white">
 
-        <img
-          src={BgMusic}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        
 
         {/* Dégradé cohérent avec HERO */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-gray-900"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-[#de1919]"></div>
 
-        <h2 className="relative z-10 text-3xl font-bold text-center mb-12">
+        <h2 className="relative z-10 text-3xl font-bold text-center pt-10 mb-12">
           MUSIC
         </h2>
 
         {/* CARROUSEL */}
-        <div className="relative z-10 max-w-[1400px] mx-auto bg-[#780000] rounded-lg p-4">
+        <div className="relative shadow-2xl border-b-8 border-black/80 z-10 max-w-[1400px] mx-auto bg-[#8c0202] rounded-lg p-4">
 
           <button
             onClick={scrollLeft}
@@ -130,15 +131,13 @@ export default function Home() {
 
         </div>
       </section>
-      <section className="relative w-full py-20 text-white">
-
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black"></div>
-
-          <div className="relative z-10 max-w-[900px] mx-auto px-4">
-
-            <h2 className="text-3xl font-bold text-center mb-10">
-              CLIP OFFICIEL
-            </h2>
+      <section className="w-full bg-black py-20 flex justify-center">
+  
+        <div className="w-full max-w-[900px] px-4">
+          
+          <h2 className="text-white text-3xl font-bold text-center mb-8">
+            CLIP OFFICIEL
+          </h2>
 
             <video
               controls
