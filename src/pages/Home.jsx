@@ -133,21 +133,29 @@ export default function Home() {
       </section>
       <section className="w-full bg-black py-20 flex justify-center">
   
+      <section className="w-full bg-black py-20 flex justify-center">
+  
         <div className="w-full max-w-[900px] px-4">
           
           <h2 className="text-white text-3xl font-bold text-center mb-8">
             CLIP OFFICIEL
           </h2>
 
-            <video
-              controls
-              className="w-full rounded-2xl shadow-2xl"
-            >
-              <source src="/videos/video.mp4" type="video/mp4" />
-            </video>
-
+          <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/Tmy0HGbHC58?si=WQnTs0xE15jwj5C0"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            ></iframe>
+            
           </div>
 
+        </div>
+
+      </section>
       </section>
       {/* MODAL */}
       <MusicModal
