@@ -50,7 +50,7 @@ export default function Header() {
 
           <li>
             <Link 
-              to="/news" 
+              to="/videos" 
               className="hover:text-gray-300 transition duration-200"
             >
               VIDEOS
@@ -59,7 +59,7 @@ export default function Header() {
 
           <li>
             <Link 
-              to="/news" 
+              to="/bookme" 
               className="hover:text-gray-300 transition duration-200"
             >
               BOOKME

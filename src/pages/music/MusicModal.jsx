@@ -2,33 +2,46 @@ export default function MusicModal({ album, onClose }) {
   if (!album) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center">
-      <div className="bg-zinc-900 text-white rounded-xl p-6 w-full max-w-md relative">
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 text-xl"
-        >
-          ✕
-        </button>
+    <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center">
 
-        <h2 className="text-2xl font-bold mb-4">{album.title}</h2>
+      {/* fermer */}
+      <button
+        onClick={onClose}
+        className="absolute top-6 right-6 text-white text-4xl"
+      >
+        ✕
+      </button>
+
+      <div className="bg-black text-white p-6 rounded-xl max-w-xl w-full text-center">
 
         <img
           src={album.cover}
           alt={album.title}
-          className="w-full h-56 object-contain bg-black rounded mb-4"
+          className="w-full h-full object-cover rounded-lg mb-4"
         />
 
-        <ul className="space-y-4">
-          {album.tracks.map((track, index) => (
-            <li key={index}>
-              <p className="mb-1">{track.title}</p>
-              <audio controls className="w-full">
-                <source src={track.src} type="audio/mpeg" />
-              </audio>
-            </li>
-          ))}
-        </ul>
+        <h2 className="text-2xl font-bold mb-2">{album.title}</h2>
+
+        <p className="mb-6">{album.description}</p>
+
+        <div className="flex justify-center gap-4">
+          <a
+            href={album.spotify}
+            target="_blank"
+            className="bg-green-500 px-4 py-2 rounded-lg"
+          >
+            Écouter
+          </a>
+
+          <a
+            href={album.buy}
+            target="_blank"
+            className="bg-red-500 px-4 py-2 rounded-lg"
+          >
+            Acheter
+          </a>
+        </div>
+
       </div>
     </div>
   );
