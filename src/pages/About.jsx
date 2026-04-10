@@ -6,7 +6,7 @@ export default function About() {
     return(
         <>
         <Header />
-          <section className="relative w-full h-screen flex flex-col pl-20 pr-20 pt-40 text-white">
+          <section className="relative w-full h-screen flex flex-col pl-20 pr-20 pt-40 text-[#ffffff]">
             <img
               src={BgAbout}
               alt=""

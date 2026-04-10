@@ -11,7 +11,7 @@ export default function Header() {
         </Link>
 
         {/* Navigation */}
-        <ul className="flex gap-8 text-white text-lg">
+        <ul className="flex gap-8 text-[#ffffff] text-lg">
           <li>
             <Link 
               to="/" 

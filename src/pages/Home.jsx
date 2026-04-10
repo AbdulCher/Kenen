@@ -23,12 +23,12 @@ export default function Home() {
     );
   };
 
-  const [activeIndex, setActiveIndex] = useState(0);
+ 
 
   return (
     <>
     <Header />
-      <section className="relative w-full h-screen pt-20 text-white">
+      <section className="relative w-full h-screen pt-20 text-[#ffffff]">
 
         <img
           src={BgHero}
@@ -55,93 +55,66 @@ export default function Home() {
         
 
         {/* Dégradé cohérent avec HERO */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-[#de1919]"></div>
+        <div className="absolute inset-0 bg-black"></div>
 
-        <h2 className="relative z-10 text-3xl font-bold text-center pt-10 mb-12">
-          MUSIC
+        
+        <h2 className="relative flex justify-center mb-20 text-2xl text-white font-bold text-center">
+          ALBUMS
         </h2>
 
-        {/* CARROUSEL */}
-        <div className="relative shadow-2xl border-b-8 border-black/80 z-10 max-w-[1400px] mx-auto bg-[#8c0202] rounded-lg p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1200px] mx-auto px-8 py-10">
 
-          <button
-            onClick={scrollLeft}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full"
-          >
-            ←
-          </button>
-
-          <div className="relative z-10 w-full max-w-[900px] mx-auto overflow-hidden">
-
+          {albums.map((album) => (
             <div
-              ref={scrollRef}
-              className="flex justify-center items-center gap-10 py-16"
+              key={album.id}
+              className="bg-gradient-to-b from-black via-black/20 to-[#a00109] backdrop-blur-md border border-gray-500 rounded-2xl p-4 overflow-hidden shadow-[0_20px_40px_rgba(221,177,131,0.4)]"
             >
-              {albums.map((album, index) => {
-                const offset = index - activeIndex;
+              <h3 className="text-lg font-bold text-center mb-4">{album.title}</h3>
+              {/*<span className="text-sm font-bold text-white mb-3 text-center">{album.year}</span>*/}
+              {/* IMAGE */}
+              <img
+                src={album.cover}
+                alt=""
+                className="w-full hover:scale-105 transition duration-300 h-70 object-cover"
+              />
+            
+              {/* CONTENU */}
+              <div className="p-4 text-white">
 
-                let style = "";
+                
+                
 
-                if (offset === 0) {
-                  // centre
-                  style = "scale-110 rotate-0 z-20 opacity-100";
-                } else if (offset === -1) {
-                  // gauche
-                  style = "-rotate-12 scale-90 opacity-60";
-                } else if (offset === 1) {
-                  // droite
-                  style = "rotate-12 scale-90 opacity-60";
-                } else {
-                  // loin
-                  style = "scale-75 opacity-20";
-                }
+                {/* AUDIO */}
+                <audio controls className="w-full mb-4">
+                  <source src={album.audio} type="audio/mpeg" />
+                </audio>
 
-                return (
-                  <div
-                    key={album.id}
-                    onClick={() => setActiveIndex(index)}
-                    className={`
-                      transition-all duration-500 ease-in-out
-                      transform
-                      ${style}
-                    `}
-                  >
-                    <div className="w-[200px] md:w-[260px]">
-                      <AlbumCard
-                        album={album}
-                        onClick={() => {
-                          setSelectedAlbum(album);
-                          setActiveIndex(index);
-                        }}
-                      />
-                    </div>
-                  </div>
-                );
-              })}
+                {/* BOUTON */}
+                <button
+                  onClick={() => setSelectedAlbum(album)}
+                  className="block mx-auto bg-[#e00303] text-white border border-gray-600 hover:bg-[#ff7d00] px-6 py-2 rounded-lg transition"
+                >
+                  Voir plus
+                </button>
+
+              </div>
             </div>
-
-          </div>
-
-          <button
-            onClick={scrollRight}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full"
-          >
-            →
-          </button>
+          ))}
 
         </div>
       </section>
-      <section className="w-full bg-black py-20 flex justify-center">
+      <div className="w-full pr-12 bg-[#8c0202]"></div>
+      <section className="w-full bg-black py-20 flex justify-center border-b-[#8c0202]">
   
       <section className="w-full bg-black py-20 flex justify-center">
   
         <div className="w-full max-w-[900px] px-4">
           
-          <h2 className="text-white text-3xl font-bold text-center mb-8">
+          <h2 className="text-white text-2xl font-bold text-center mb-8">
             CLIP OFFICIEL
           </h2>
 
-          <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl">
+          <div className="w-full bg-black aspect-video overflow-hidden border border-gray-600 rounded-2xl shadow-[0_30px_50px_rgba(140,2,2,0.4)]">
             <iframe
               className="w-full h-full"
               src="https://www.youtube.com/embed/Tmy0HGbHC58?si=WQnTs0xE15jwj5C0"
@@ -152,6 +125,12 @@ export default function Home() {
             ></iframe>
             
           </div>
+          <button
+  onClick={() => window.open("https://www.youtube.com/@BarhanOfficial", "_blank")}
+  className="mt-10 bg-[#e00303] hover:bg-[#ff7d00] text-black px-6 py-2 rounded-lg transition block mx-auto"
+>
+  Voir plus
+</button>
 
         </div>
 
