@@ -21,7 +21,7 @@ export default function Icons() {
           href={item.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-4xl text-white
+          className="text-4xl text-white/80
                      transition-all duration-300
                      hover:text-[#ff7d00] hover:scale-125 hover:rotate-12"
         >
