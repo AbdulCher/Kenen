@@ -4,6 +4,7 @@ import About from "./pages/About"
 import Music from "./pages/music/Music"
 import Photos from "./pages/Photos.jsx";
 import Videos from "./pages/Videos.jsx";
+import Bookme from "./pages/Bookme.jsx";
 
 
 
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/music" element={<Music />} />
         <Route path="/photos" element={<Photos />} />
         <Route path="/videos" element={<Videos />} />
+        <Route path="/bookme" element={<Bookme />} />
       </Routes>
     </>
   )
