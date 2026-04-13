@@ -6,6 +6,7 @@ import { useState } from "react";
 import Icons from "../components/Icons";
 import BgAbout from "../assets/bgAbout.jpg";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const BLOCKS = [
   {
@@ -13,24 +14,21 @@ const BLOCKS = [
     label: "Origines",
     preview: "Né en Afrique de l'Ouest (Mauritanie), la musique a toujours fait partie de ma vie.",
     full: `Je suis né en Afrique de l'Ouest (Mauritanie). J'ai commencé à chanter et à danser très jeune, j'adore la musique. J'ai été influencé par diverses musiques de divers pays : Tupac, Maalouma Mint Meidah, Edith Piaf, Ray Charles, Nina Simone, Salif Keita, Youssou Ndour, Francis Cabrel, MC Solar.
-
-Ces influences variées ont façonné une sensibilité musicale unique, à la croisée des cultures et des continents.`,
+    Ces influences variées ont façonné une sensibilité musicale unique, à la croisée des cultures et des continents.`,
   },
   {
     id: "parcours",
     label: "Parcours",
     preview: "Alias Chico en 1999, puis Kennen — un nom qui porte tout un univers.",
     full: `J'ai été Alias Chico quand j'ai commencé le rap en 1999. Un premier album "Mots de tête" en 2018 a marqué un tournant. Aujourd'hui, je me suis choisi le nom Kennen — "Someone else" en langue africaine (Wolof).
-
-Ce nom n'est pas une fuite, c'est une transformation. Devenir autre pour mieux se retrouver.`,
+    Ce nom n'est pas une fuite, c'est une transformation. Devenir autre pour mieux se retrouver.`,
   },
   {
     id: "vision",
     label: "Vision",
     preview: "Une musique qui transcende les barrières ethniques et raciales.",
     full: `Ma musique est une fusion d'un ensemble de cultures. Elle transcende les barrières ethniques et raciales, elle reflète le point commun qui lie l'humanité.
-
-Je vous laisse la définir comme vous la percevez. Moi, je la définis comme de la Kennen Music — une musique qui appartient à tous, née de partout, destinée à chacun.`,
+  Je vous laisse la définir comme vous la percevez. Moi, je la définis comme de la Kennen Music — une musique qui appartient à tous, née de partout, destinée à chacun.`,
   },
 ];
 
@@ -60,7 +58,7 @@ function ExpandableBlock({ block }) {
 
       <div className="relative z-10">
         {/* Label */}
-        <p className="text-[12px] tracking-[0.18em] text-[#ddb183]/70 uppercase mb-3">
+        <p className="text-[12px] tracking-[0.18em] text-[#ddb183]/90 uppercase mb-3">
           {block.label}
         </p>
 
@@ -71,11 +69,11 @@ function ExpandableBlock({ block }) {
           }`}
         >
           {open ? (
-            <p className="text-white/80 text-base leading-loose whitespace-pre-line">
+            <p className="text-white/90 text-base leading-loose whitespace-pre-line">
               {block.full}
             </p>
           ) : (
-            <p className="text-white/50 text-base leading-loose line-clamp-2">
+            <p className="text-white/90 text-base leading-loose line-clamp-2">
               {block.preview}
             </p>
           )}
@@ -178,7 +176,7 @@ export default function About() {
         <div className="relative z-10 max-w-[1100px] mx-auto px-6">
 
           {/* Titre section */}
-          <p className="text-[11px] tracking-[0.18em] text-white/40 text-center uppercase mb-2">
+          <p className="text-[11px] tracking-[0.18em] text-white/90 text-center uppercase mb-2">
             Mon histoire
           </p>
           <h2 className="text-3xl font-bold text-center mb-16 tracking-wide">
@@ -186,7 +184,7 @@ export default function About() {
           </h2>
 
           {/* Grille de blocs */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 border-l-2">
             {BLOCKS.map((block) => (
               <ExpandableBlock key={block.id} block={block} />
             ))}
@@ -194,6 +192,7 @@ export default function About() {
 
         </div>
       </section>
+      <Footer />
     </>
   );
 }

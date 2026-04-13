@@ -5,6 +5,7 @@
 import { useState } from "react";
 import Header from "../components/Header";
 import Icons from "../components/Icons";
+import Footer from "../components/Footer";
 
 // ── Données de contact ───────────────────────────────────────
 const CONTACT = {
@@ -411,6 +412,7 @@ export default function Bookme() {
 
         </div>
       </section>
+      <Footer />
     </>
   );
 }

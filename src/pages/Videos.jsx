@@ -4,6 +4,7 @@
 
 import Header from "../components/Header";
 import Icons from "../components/Icons";
+import Footer from "../components/Footer";
 
 export default function Videos() {
   return (
@@ -77,6 +78,7 @@ export default function Videos() {
 
         </div>
       </section>
+      <Footer />
     </>
   );
 }

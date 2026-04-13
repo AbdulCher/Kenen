@@ -8,6 +8,7 @@ import GoldFlowParticles from "../animations/GoldFlowParticles";
 import Bg from "../assets/bg.jpg";
 import Header from "../components/Header";
 import { albums as photos } from "./Photosdata";
+import Footer from "../components/Footer";
 
 // ── Galerie grid ─────────────────────────────────────────────
 function Gallery({ photos, onPhotoClick, onClose }) {
@@ -246,7 +247,7 @@ export default function Photos() {
         {/* Contenu */}
         <div className="relative z-10 flex flex-col items-center gap-10">
           <div className="flex flex-col items-center gap-3">
-            <p className="text-[11px] tracking-[0.18em] text-white/40 uppercase">Galerie</p>
+            <p className="text-[11px] tracking-[0.18em] text-white/90 uppercase">Galerie</p>
             <h1 className="text-5xl font-bold tracking-[0.15em] drop-shadow-[0_2px_24px_rgba(255,180,60,0.3)]">
               PHOTOS
             </h1>
@@ -291,6 +292,7 @@ export default function Photos() {
           )}
         </div>
       )}
+      <Footer />
     </>
   );
 }

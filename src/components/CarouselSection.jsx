@@ -48,7 +48,7 @@ export default function CarouselSection({ albums, onAlbumClick }) {
       />
 
       {/* En-tête */}
-      <p className="relative z-10 text-[13px] tracking-[0.18em] text-white/40 text-center uppercase mb-2">
+      <p className="relative z-10 text-[13px] tracking-[0.18em] text-white/70 text-center uppercase mb-2">
         Discographie
       </p>
       
@@ -100,17 +100,8 @@ export default function CarouselSection({ albums, onAlbumClick }) {
                     draggable={false}
                   />
 
-                  {/* Badge "Écouter" — visible uniquement sur la carte active */}
-                  {pos === "center" && (
-                    <div
-                      className="absolute flex items-center gap-1 bottom-3 left-1/2 -translate-x-1/2
-                      bg-[#ddb183] text-black text-[11px] font-bold
-                      px-3 py-1 rounded-full
-                      animate-[fadeIn_0.3s_ease]"
-                    >
-                      ▶ Écouter
-                    </div>
-                  )}
+                  
+                  
                 </div>
 
                 {/* Infos */}
@@ -143,7 +134,7 @@ export default function CarouselSection({ albums, onAlbumClick }) {
                      flex items-center justify-center group"
         >
           <svg
-            className="w-4 h-4 text-white/60 group-hover:text-[#ddb183] transition-colors"
+            className="w-4 h-4 text-white/70 group-hover:text-[#ddb183] transition-colors"
             viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"
           >
             <path d="M6 3l5 5-5 5" />

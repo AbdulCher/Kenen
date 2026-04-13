@@ -7,6 +7,7 @@ import Header from "../../components/Header";
 import MusicModal from "./MusicModal";
 import { albums } from "./Albums";
 import Icons from "../../components/Icons";
+import Footer from "../../components/Footer";
 
 function AlbumCard({ album, onListen }) {
   const [open, setOpen] = useState(false);
@@ -158,7 +159,7 @@ export default function Music() {
         <div className="relative z-10 max-w-[1100px] mx-auto px-6">
 
           {/* En-tête */}
-          <p className="text-[11px] tracking-[0.18em] text-white/40 text-center uppercase mb-2">
+          <p className="text-[11px] tracking-[0.18em] text-white/90 text-center uppercase mb-2">
             Discographie
           </p>
           <h2 className="text-3xl font-bold text-center mb-16 tracking-wide">
@@ -191,6 +192,7 @@ export default function Music() {
           onClose={() => setSelectedAlbum(null)}
         />
       )}
+      <Footer />
     </>
   );
 }
